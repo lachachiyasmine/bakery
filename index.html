@@ -4,68 +4,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/styles.css" rel="stylesheet">
-    <script defer src="js/scripts.js"></script>
     <title>Maison Rili - Boulangerie à Colombes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <h1 class="logo">Maison Rili</h1>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#patisserie">Patisserie</a></li>
-                <li><a href="#vienoiserie">Vienoiserie</a></li>
-                <li><a href="#sandwich">Sandwich</a></li>
-                <li><a href="#pain">Pain</a></li>
-                <li><a href="#gateaux-orientaux">Gâteaux Orientaux</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">Maison Rili</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="patisserie.html">Patisserie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="viennoiserie.html">Viennoiserie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sandwich.html">Sandwich</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pain.html">Pain</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gateaux-orientaux.html">Gâteaux Orientaux</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="auth-buttons">
+                <button id="login-btn" class="btn btn-success">S'identifier</button>
+                <button id="register-btn" class="btn btn-primary">Créer un compte</button>
+            </div>
         </nav>
-        <div class="auth-buttons">
-            <button id="login-btn">S'identifier</button>
-            <button id="register-btn">Créer un compte</button>
-        </div>
     </header>
     <main>
         <div class="gallery">
             <img id="slider" src="images/photo1.jpg" alt="Image slider">
             <div class="content-overlay">
                 <div id="presentation">
-                    Maison Rili est une boulangerie artisanale située au cœur de Colombes. Depuis notre ouverture, nous
-                    sommes fiers de servir des pâtisseries fraîches, des viennoiseries croustillantes, des sandwiches
-                    savoureux et bien plus encore. Tous nos produits sont faits maison avec des ingrédients de qualité.
+                    <h2>Maison Rili</h2>
+                    <p>Une boulangerie artisanale située au cœur de Colombes. Depuis notre ouverture, nous sommes fiers de
+                        servir des pâtisseries fraîches, des viennoiseries croustillantes, des sandwiches savoureux et bien
+                        plus encore. Tous nos produits sont faits maison avec des ingrédients de qualité.</p>
                 </div>
-                <button class="click-collect" onclick="clickAndCollect()">Click & Collect</button>
+                <button class="click-collect btn btn-warning" onclick="clickAndCollect()">Click & Collect</button>
             </div>
         </div>
         <section class="avis">
-            <h2>Avis de nos Clients !</h2>
-            <div class="clients">
-                <div>
-                    🥐☕️ "Mon Petit Plaisir Quotidien!" ☕️🥐 - Témoignage Client<br>
-                    "Je m’appelle Marie et je travaille dans le quartier. Chaque matin, c'est le même rituel : je
-                    m’arrête chez Maison Rili pour prendre un pain au chocolat fraîchement sorti du four et un café
-                    fumant. 🍫🥐<br>
-                    C’est mon petit plaisir qui me donne l'énergie pour commencer la journée avec le sourire. 😊 La
-                    combinaison du croquant de la pâte feuilletée et de la douceur du chocolat, accompagnée d’une gorgée
-                    de café chaud, c’est simplement divin! ☕️✨<br>
-                    Je ne saurais imaginer commencer ma journée sans ce duo gourmand. Un grand merci à l'équipe de
-                    Maison Rili pour leur accueil chaleureux et la qualité constante de leurs produits. Vous faites de
-                    mes matins un vrai bonheur!" 🌅💖<br>
-                    #MaisonRili #PainAuChocolat #CaféDuMatin #TémoignageClient #PlaisirQuotidien
+            <div class="container">
+                <h2 class="text-center">Avis de nos Clients !</h2>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">🥐☕️ "Mon Petit Plaisir Quotidien!" ☕️🥐 - Témoignage Client</h5>
+                                <p class="card-text">"Je m’appelle Marie et je travaille dans le quartier. Chaque matin,
+                                    c'est le même rituel : je m’arrête chez Maison Rili pour prendre un pain au chocolat
+                                    fraîchement sorti du four et un café fumant. 🍫🥐<br>
+                                    C’est mon petit plaisir qui me donne l'énergie pour commencer la journée avec le
+                                    sourire. 😊 La combinaison du croquant de la pâte feuilletée et de la douceur du
+                                    chocolat, accompagnée d’une gorgée de café chaud, c’est simplement divin! ☕️✨<br>
+                                    Je ne saurais imaginer commencer ma journée sans ce duo gourmand. Un grand merci à
+                                    l'équipe de Maison Rili pour leur accueil chaleureux et la qualité constante de
+                                    leurs produits. Vous faites de mes matins un vrai bonheur!" 🌅💖<br>
+                                    #MaisonRili #PainAuChocolat #CaféDuMatin #TémoignageClient #PlaisirQuotidien</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="images/painauchocolat.jfif" alt="baguette" class="img-fluid rounded-circle">
+                    </div>
+                    <div class="col-md-6">
+                        <img src="images/baguette.jfif" alt="baguette" class="img-fluid rounded-circle">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">🥖✨ "Comment Aimez-vous Votre Baguette?" 🥖✨</h5>
+                                <p class="card-text">Chez Maison Rili, nous croyons qu'une baguette n'est pas juste un
+                                    pain, c'est une expérience! Que vous la préfériez croustillante et dorée ou douce et
+                                    moelleuse, nous la préparons à la perfection. 🌟 Accompagnez votre café du matin avec
+                                    une tranche beurrée ou créez un sandwich époustouflant pour le déjeuner. 🍞☕<br>
+                                    La baguette est le cœur de chaque repas. Venez chercher la vôtre aujourd'hui et
+                                    dites-nous comment vous aimez votre baguette! 🤤💕<br>
+                                    #MaisonRili #BaguetteParfaite #PassionDuPain</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <img src="images/painauchocolat.jfif" alt="baguette">
-                <div>
-                    🥖✨ "Comment Aimez-vous Votre Baguette?" 🥖✨<br>
-                    Chez Maison Rili, nous croyons qu'une baguette n'est pas juste un pain, c'est une expérience! Que
-                    vous la préfériez croustillante et dorée ou douce et moelleuse, nous la préparons à la perfection.
-                    🌟 Accompagnez votre café du matin avec une tranche beurrée ou créez un sandwich époustouflant pour
-                    le déjeuner. 🍞☕<br>
-                    La baguette est le cœur de chaque repas. Venez chercher la vôtre aujourd'hui et dites-nous comment
-                    vous aimez votre baguette! 🤤💕<br>
-                    #MaisonRili #BaguetteParfaite #PassionDuPain
-                </div>
-                <img src="images/baguette.jfif" alt="baguette">
             </div>
         </section>
     </main>
@@ -81,7 +112,6 @@
                 Téléphone: +33 9 84 35 76 95
             </p>
         </div>
-        <hr>
         <div class="map">
             <iframe class="centered-iframe"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2621.594759516008!2d2.2523568755227554!3d48.92311257134099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e665c15753196d%3A0xfb455e2c221d514!2sMaison%20Rili!5e0!3m2!1sfr!2sdz!4v1687297045035!5m2!1sfr!2sdz"
@@ -91,21 +121,43 @@
     </div>
     <footer>
         <div class="footer">
-            
+            <h1 class="logo"><a class="logo" href="index.html">Maison Rili</a></h1>
+            <div>
+                <ul>
+                    <li><a href="patisserie.html">Patisserie</a></li>
+                    <li><a href="viennoiserie.html">Viennoiserie</a></li>
+                    <li><a href="sandwich.html">Sandwich</a></li>
+                    <li><a href="pain.html">Pain</a></li>
+                    <li><a href="gateaux-orientaux.html">Gâteaux Orientaux</a></li>
+                </ul>
+            </div>
+
             <div class="health-advice">
                 <p>Pour votre santé, évitez de manger trop gras, trop sucré, trop salé</p>
             </div>
-            <div>
-                <ul>
-                    <li><a href="#patisserie">Patisserie</a></li>
-                    <li><a href="#vienoiserie">Vienoiserie</a></li>
-                    <li><a href="#sandwich">Sandwich</a></li>
-                    <li><a href="#pain">Pain</a></li>
-                    <li><a href="#gateaux-orientaux">Gâteaux Orientaux</a></li>
-                </ul>
-            </div>
         </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            const images = ["images/photo1.jpg", "images/photo2.jfif"];
+            let currentIndex = 0;
+
+            function changeImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                const slider = document.getElementById("slider");
+                slider.src = images[currentIndex];
+                slider.style.height = document.querySelector(".gallery").offsetHeight + "px";
+            }
+
+            setInterval(changeImage, 3000);
+        });
+
+        function clickAndCollect() {
+            alert("La fonction Click & Collect est en cours de développement.");
+        }
+    </script>
 </body>
 
 </html>
