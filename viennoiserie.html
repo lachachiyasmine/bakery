@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script defer src="js/scripts.js"></script>
+    <title>Viennoiserie</title>
+    <style>
+        .navbar {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+#checkout{
+    margin-right: 1em;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    padding: 10px 15px;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #333;
+}
+
+.auth-buttons .btn {
+    margin-left: 10px;
+}
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/vien.jpg');
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 2em auto;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 0;
+            color: #ffffff;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 4px;
+        }
+
+        .item button {
+            font-size: 16px;
+            border: none;
+            background-color: transparent;
+            color: #000000;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .item button:hover {
+            color: #000000;
+        }
+
+        .quantity {
+            color: #000000;
+        }
+
+        .item span.quantity {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 10px;
+            width: 30px;
+            text-align: center;
+        }
+
+        #h1 {
+            padding-bottom: 0.5em;
+        }
+
+        .item .name {
+            flex-grow: 1;
+            margin-left: 10px;
+            color: #000000;
+        font-weight: bold;
+        }
+
+        .item .price {
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .cart {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .cart button {
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #ffffff;
+            color: #000000;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cart button:hover {
+            background-color: #5cb85c;
+        }
+
+        .total-label {
+            margin-right: 10px;
+            color:#fff;
+        }
+
+        .total-price {
+            color: #fff;
+        }
+
+        #total {
+            margin-right: 1em;
+        }
+        footer {
+    background-color: #0e0d0d;
+    color: #fff;
+    padding: 1em;
+    padding-top: 2em;
+    text-align: center;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer ul {
+    list-style: none;
+    display: flex;
+    margin-top: 20px;
+}
+
+.footer ul li {
+    margin: 0 10px;
+}
+
+.footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.health-advice {
+    margin-top: 10px;
+    margin-left: 2.5em;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">Maison Rili</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="patisserie.html">Patisserie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="viennoiserie.html">Viennoiserie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sandwich.html">Sandwich</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pain.html">Pain</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gateaux-orientaux.html">Gâteaux Orientaux</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="auth-buttons">
+                <button id="login-btn" class="btn btn-success">S'identifier</button>
+                <button id="register-btn" class="btn btn-primary">Créer un compte</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+    <div class="cart">
+        <span class="total-label">Total:</span>
+        <span class="total-price">$<span id="total">0.00</span></span>
+        <button id="checkout">Panier</button>
+    </div>
+
+    <div class="container">
+        <h1 id="h1">Viennoiserie</h1>
+
+        <div class="item">
+            <div>
+                <button class="minus">-</button>
+                <span class="quantity">0</span>
+                <button class="plus">+</button>
+                <span class="name">Croissant</span>
+            </div>
+            <div class="price">$1.10</div>
+        </div>
+
+        <div class="item">
+            <div>
+                <button class="minus">-</button>
+                <span class="quantity">0</span>
+                <button class="plus">+</button>
+                <span class="name">Pain au chocolat</span>
+            </div>
+            <div class="price">$1.20</div>
+        </div>
+
+        <div class="item">
+            <div>
+                <button class="minus">-</button>
+                <span class="quantity">0</span>
+                <button class="plus">+</button>
+                <span class="name">Pain suisse</span>
+            </div>
+            <div class="price">$1.50</div>
+        </div>
+
+        <div class="item">
+            <div>
+                <button class="minus">-</button>
+                <span class="quantity">0</span>
+                <button class="plus">+</button>
+                <span class="name">Pain aux raisins</span>
+            </div>
+            <div class="price">$1.50</div>
+        </div>
+
+        <div class="item">
+            <div>
+                <button class="minus">-</button>
+                <span class="quantity">0</span>
+                <button class="plus">+</button>
+                <span class="name">Torsades chocolat</span>
+            </div>
+            <div class="price">$1.50</div>
+        </div>
+
+        <div class="item">
+            <div>
+                <button class="minus">-</button>
+                <span class="quantity">0</span>
+                <button class="plus">+</button>
+                <span class="name">Escargot pistache chocolat</span>
+            </div>
+            <div class="price">$1.50</div>
+        </div>
+
+        <div class="item">
+            <div>
+                <button class="minus">-</button>
+                <span class="quantity">0</span>
+                <button class="plus">+</button>
+                <span class="name">Chausson au pomme</span>
+            </div>
+            <div class="price">$1.50</div>
+        </div>
+
+        <div class="item">
+            <div>
+                <button class="minus">-</button>
+                <span class="quantity">0</span>
+                <button class="plus">+</button>
+                <span class="name">Brioche aux sucre</span>
+            </div>
+            <div class="price">$1.20</div>
+        </div>
+
+        <div class="item">
+            <div>
+                <button class="minus">-</button>
+                <span class="quantity">0</span>
+                <button class="plus">+</button>
+                <span class="name">Pain au nutella</span>
+            </div>
+            <div class="price">$1.70</div>
+        </div>
+
+        <div class="item">
+            <div>
+                <button class="minus">-</button>
+                <span class="quantity">0</span>
+                <button class="plus">+</button>
+                <span class="name">Croissant et pain au chocolat amendes</span>
+            </div>
+            <div class="price">$1.60</div>
+        </div>
+    </div>
+
+    <script>
+        const items = document.querySelectorAll('.item');
+        const quantityElements = document.querySelectorAll('.quantity');
+        const minusButtons = document.querySelectorAll('.minus');
+        const plusButtons = document.querySelectorAll('.plus');
+        const checkoutButton = document.getElementById('checkout');
+        const totalElement = document.getElementById('total');
+        let total = 0;
+
+        // Event listeners for plus and minus buttons
+        minusButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                let quantity = parseInt(quantityElements[index].textContent);
+                if (quantity > 0) {
+                    quantity--;
+                    quantityElements[index].textContent = quantity;
+                    updateTotal();
+                }
+            });
+        });
+
+        plusButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                let quantity = parseInt(quantityElements[index].textContent);
+                quantity++;
+                quantityElements[index].textContent = quantity;
+                updateTotal();
+            });
+        });
+
+        // Event listener for the checkout button
+        checkoutButton.addEventListener('click', () => {
+            alert('Items added to cart!');
+        });
+
+        // Update the total price
+        function updateTotal() {
+            total = 0;
+            items.forEach((item, index) => {
+                const quantity = parseInt(quantityElements[index].textContent);
+                const price = parseFloat(item.lastElementChild.textContent.substring(1));
+                total += quantity * price;
+            });
+            totalElement.textContent = total.toFixed(2);
+        }
+    </script>
+
+<footer>
+    <div class="footer">
+        <h1 class="logo"><a class="logo" href="index.html">Maison Rili</a></h1>
+        <div>
+            <ul>
+                <li><a href="patisserie.html">Patisserie</a></li>
+                <li><a href="viennoiserie.html">Viennoiserie</a></li>
+                <li><a href="sandwich.html">Sandwich</a></li>
+                <li><a href="pain.html">Pain</a></li>
+                <li><a href="gateaux-orientaux.html">Gâteaux Orientaux</a></li>
+            </ul>
+        </div>
+
+        <div class="health-advice">
+            <p>Pour votre santé, évitez de manger trop gras, trop sucré, trop salé</p>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>
